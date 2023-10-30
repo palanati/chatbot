@@ -1,0 +1,35 @@
+# Simple Chatbot
+
+# Function to generate a response
+def generate_response(user_input):
+    # Define some sample responses
+    responses = {
+        "hello": "Hello! How can I assist you?",
+        "how are you?": "I'm good, thank you! How about you?",
+        "what is your name?": "My name is Chatbot.",
+        "what is your age?":"i am an AI, i don't have an age.",
+        "where do you live?":"i am an AI, so i live everywhere.",
+        "how many languages can you speak?":"i can speak many languages.which language you want me to speak?",
+        "I want you to speak english.":"ok",
+        "bye": "Goodbye! Have a nice day!"
+        
+    }
+    
+    # Check if the user input matches any predefined responses
+    if user_input.lower() in responses:
+        return responses[user_input.lower()]
+    else:
+        return "I'm sorry, I didn't understand that."
+
+# Function to start the chatbot
+def start_chatbot():
+    print("Chatbot: Hello! How can I assist you?")
+    while True:
+        user_input = input("User: ")
+        response = generate_response(user_input)
+        print("Chatbot:", response)
+        if user_input.lower() == "bye":
+            break
+
+# Start the chatbot
+start_chatbot()
